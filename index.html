@@ -104,6 +104,21 @@
       document.getElementById("checkin").disabled = true;
       alert("You earned 10 demo points!");
     }
+<script type="module">
+  import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
+
+  const SUPABASE_URL = "https://frfudfztzewsapytqvjo.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = 
+https://frfudfztzewsapytqvjo.supabase.co
+  const supabase = createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  window.demmahSupabase = supabase;
+  console.log("Demmah Supabase client initialized.");
+</script>
+  
   </script>
 </body>
 </html>

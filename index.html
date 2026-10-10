@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demmah — Earn Rewards</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f5;
+      color: #183329;
+    }
+    header {
+      background: #123d2b;
+      color: white;
+      padding: 25px 20px;
+    }
+    header h1 { margin: 0; font-size: 30px; }
+    header p { margin-bottom: 0; color: #d1eadb; }
+    main { max-width: 650px; margin: auto; padding: 20px; }
+    .balance {
+      background: #176b4d;
+      color: white;
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 25px;
+    }
+    .balance p { margin: 0 0 8px; }
+    .amount { font-size: 34px; font-weight: bold; }
+    .note { font-size: 12px; margin-top: 8px; }
+    .card {
+      background: white;
+      padding: 18px;
+      border-radius: 14px;
+      margin: 14px 0;
+      border: 1px solid #e0e8e2;
+    }
+    .card h2 { font-size: 19px; margin-top: 0; }
+    .card p { line-height: 1.5; color: #617168; }
+    button {
+      background: #176b4d;
+      color: white;
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    footer { text-align: center; padding: 25px; color: #617168; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Demmah</h1>
+    <p>Small actions. Bigger possibilities.</p>
+  </header>
+  <main>
+    <h2>Welcome to Demmah 👋</h2>
+    <p>Check in daily, explore tasks and invite friends to earn demo points.</p>
+
+    <section class="balance">
+      <p>Your demo points</p>
+      <div class="amount"><span id="points">0</span> DMP</div>
+      <div class="note">Demo points only. No cash value yet.</div>
+    </section>
+
+    <section class="card">
+      <h2>📅 Daily check-in</h2>
+      <p>Come back daily to collect demo points.</p>
+      <button id="checkin" onclick="checkIn()">Check in (+10)</button>
+    </section>
+
+    <section class="card">
+      <h2>🎯 Tasks</h2>
+      <p>Rewarding tasks will be introduced as the website develops.</p>
+    </section>
+
+    <section class="card">
+      <h2>🤝 Referrals</h2>
+      <p>Invite friends and earn rewards when the referral system is ready.</p>
+    </section>
+
+    <section class="card">
+      <h2>💳 Withdrawals</h2>
+      <p>Nigerian bank withdrawals are not available yet. We will add secure payments later.</p>
+    </section>
+  </main>
+  <footer>Demmah © 2026</footer>
+  <script>
+    let points = 0;
+    let checkedIn = false;
+
+    function checkIn() {
+      if (checkedIn) {
+        alert("You have already checked in during this visit.");
+        return;
+      }
+      checkedIn = true;
+      points += 10;
+      document.getElementById("points").textContent = points;
+      document.getElementById("checkin").textContent = "Checked in!";
+      document.getElementById("checkin").disabled = true;
+      alert("You earned 10 demo points!");
+    }
+  </script>
+</body>
+</html>
